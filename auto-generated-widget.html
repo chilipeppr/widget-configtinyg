@@ -52,8 +52,11 @@ cprequire_test(["inline:com-chilipeppr-widget-configtinyg"], function (ls) {
     // Serial Port Selector
     // http://jsfiddle.net/chilipeppr/4RgrS/
     // NEW VERSION for SPJS v1.7 http://jsfiddle.net/chilipeppr/vetj5fvx/
-    chilipeppr.load("com-chilipeppr-serialport-spselector",
-        "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
+    $('body').append('<div id="testDivForSpjsWidget"></div>');
+
+    chilipeppr.load("#testDivForSpjsWidget",
+        "https://raw.githubusercontent.com/chilipeppr/widget-spjs/master/auto-generated-widget.html",
+        // "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
 
     function () {
         cprequire(
@@ -72,10 +75,10 @@ cprequire_test(["inline:com-chilipeppr-widget-configtinyg"], function (ls) {
 cpdefine("inline:com-chilipeppr-widget-configtinyg", ["chilipeppr_ready"], function () {
     return {
         id: "com-chilipeppr-widget-configtinyg",
-        url: "http://raw.githubusercontent.com/chilipeppr/widget-configtinyg/master/auto-generated-widget.html",       // The final URL of the working widget as a single HTML file with CSS and Javascript inlined. You can let runme.js auto fill this if you are using Cloud9.
-        fiddleurl: "http://ide.c9.io/chilipeppr/widget-configtinyg", // The edit URL. This can be auto-filled by runme.js in Cloud9 if you'd like, or just define it on your own to help people know where they can edit/fork your widget
-        githuburl: "http://github.com/chilipeppr/widget-configtinyg", // The backing github repo
-        testurl: "http://widget-configtinyg-chilipeppr.c9users.io/widget.html",   // The standalone working widget so can view it working by itself
+        url: "https://raw.githubusercontent.com/chilipeppr/widget-configtinyg/master/auto-generated-widget.html",       // The final URL of the working widget as a single HTML file with CSS and Javascript inlined. You can let runme.js auto fill this if you are using Cloud9.
+        fiddleurl: "(Local dev. No edit URL)", // The edit URL. This can be auto-filled by runme.js in Cloud9 if you'd like, or just define it on your own to help people know where they can edit/fork your widget
+        githuburl: "https://github.com/chilipeppr/widget-configtinyg", // The backing github repo
+        testurl: "http://localhost:9004/widget.html",   // The standalone working widget so can view it working by itself
         name: "Widget / Configure TinyG",
         desc: "This widget lets you configure your TinyG from a graphical user interface. It stores backup copies of your settings as well to help you never lose your settings even if you flash your firmware.",
         publish: {},
@@ -318,7 +321,10 @@ cpdefine("inline:com-chilipeppr-widget-configtinyg", ["chilipeppr_ready"], funct
                 this.fileWidget.show();
             } else {
                 var that = this;
-                chilipeppr.load("#com-chilipeppr-widget-tinyg-holderAreaForFileWidget", 'http://fiddle.jshell.net/cmcgrath5035/f7kk0che/show/light/', function () {
+                chilipeppr.load("#com-chilipeppr-widget-tinyg-holderAreaForFileWidget", 
+                "https://raw.githubusercontent.com/chilipeppr/widget-backuprestoretinyg/master/auto-generated-widget.html",
+                // 'http://fiddle.jshell.net/cmcgrath5035/f7kk0che/show/light/', 
+                function () {
                     require(["inline:com-chilipeppr-widget-backuprestoretinyg"], function (fileWidget) {
                         // We get here after the widget is loaded and instantiated
                         fileWidget.init();

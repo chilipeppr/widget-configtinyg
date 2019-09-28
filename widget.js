@@ -5,8 +5,11 @@ cprequire_test(["inline:com-chilipeppr-widget-configtinyg"], function (ls) {
     // Serial Port Selector
     // http://jsfiddle.net/chilipeppr/4RgrS/
     // NEW VERSION for SPJS v1.7 http://jsfiddle.net/chilipeppr/vetj5fvx/
-    chilipeppr.load("com-chilipeppr-serialport-spselector",
-        "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
+    $('body').append('<div id="testDivForSpjsWidget"></div>');
+
+    chilipeppr.load("#testDivForSpjsWidget",
+        "https://raw.githubusercontent.com/chilipeppr/widget-spjs/master/auto-generated-widget.html",
+        // "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
 
     function () {
         cprequire(
@@ -271,7 +274,10 @@ cpdefine("inline:com-chilipeppr-widget-configtinyg", ["chilipeppr_ready"], funct
                 this.fileWidget.show();
             } else {
                 var that = this;
-                chilipeppr.load("#com-chilipeppr-widget-tinyg-holderAreaForFileWidget", 'http://fiddle.jshell.net/cmcgrath5035/f7kk0che/show/light/', function () {
+                chilipeppr.load("#com-chilipeppr-widget-tinyg-holderAreaForFileWidget", 
+                "https://raw.githubusercontent.com/chilipeppr/widget-backuprestoretinyg/master/auto-generated-widget.html",
+                // 'http://fiddle.jshell.net/cmcgrath5035/f7kk0che/show/light/', 
+                function () {
                     require(["inline:com-chilipeppr-widget-backuprestoretinyg"], function (fileWidget) {
                         // We get here after the widget is loaded and instantiated
                         fileWidget.init();
